@@ -1,0 +1,14 @@
+package com.oops.bean;
+
+public class VechileMain {
+    public static void main(String[] args) {
+        Vechile vechile = new Vechile();
+        vechile.setBrand("Ertiga");
+        vechile.setModel("2020");
+        vechile.setPrice(2000000);
+        System.out.println(vechile.getBrand());
+        System.out.println(vechile.getModel());
+        System.out.println(vechile.getPrice());
+
+    }
+}

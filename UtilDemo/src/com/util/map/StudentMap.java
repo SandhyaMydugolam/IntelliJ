@@ -9,9 +9,18 @@ public class StudentMap {
         Department department2 = new Department("china",5,"cs");
         Department department3 = new Department("kanan",6,"mech");
 
-        studentlist.put(department1,
-                Arrays.asList(new Student("ram","blr"),new Student("joe","blr")));
-        studentlist.put(department2,
-        )
+        Student student1 = new Student("shiva","varanasi");
+        Student student2 = new Student("siva","bangalore");
+        Student student3 = new Student("mahadev","bangalore");
+        Student student4 = new Student("dev","odc");
+
+        studentlist.put(department1,Arrays.asList(student1,student2,student3,student4));
+
+        System.out.println("Department of ece");
+        Set<Department> departmentMap = studentlist.keySet();
+        for (Department department : departmentMap){
+            System.out.println(department.getDeptName()+" and "+department.getDeptHead()+" ; "+studentlist.get(department));
+
+        }
     }
 }

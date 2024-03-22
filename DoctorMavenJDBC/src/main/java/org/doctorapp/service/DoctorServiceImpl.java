@@ -1,6 +1,7 @@
 package org.doctorapp.service;
 
 import org.doctorapp.exceptions.DoctorNotFoundException;
+import org.doctorapp.exceptions.IdNotFoundException;
 import org.doctorapp.model.Doctor;
 import org.doctorapp.repository.DoctorRepositoryImpl;
 import org.doctorapp.repository.IDoctorRepository;
@@ -27,7 +28,12 @@ public class DoctorServiceImpl implements IDoctorService{
     }
 
     @Override
-    public void getById(int doctorId) {
+    public Doctor getById(int doctorId) throws IdNotFoundException {
+        Doctor doctor = doctorRepository.findById(doctorId);
+        if(doctor==null){
+            throw new IdNotFoundException("Invalid ID");
+        }
+        return doctor;
 
     }
 

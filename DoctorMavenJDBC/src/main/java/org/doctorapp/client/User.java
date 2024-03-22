@@ -46,6 +46,59 @@ public class User {
         } catch (DoctorNotFoundException e) {
             e.printStackTrace();
         }
+        System.out.println("------------------------");
+        System.out.println("By Speciality and Experience");
+        try {
+            doctorList = doctorService.getBySpecialityAndExp("PEDIATRICIAN",10);
+            for (Doctor doctor: doctorList){
+                System.out.println(doctor);
+            }
+        } catch (DoctorNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("-----------------------");
+        System.out.println("Update Method");
+
+        doctorService.updateDoctor(2,2000);
+        doctorList = doctorService.getAll();
+        for (Doctor doctor : doctorList){
+            System.out.println(doctor);
+        }
+
+        System.out.println("-------------------------");
+        System.out.println("Delete Method");
+
+        doctorService.deleteDoctor(1);
+        doctorList = doctorService.getAll();
+        for (Doctor doctor : doctorList){
+            System.out.println(doctor);
+        }
+
+        System.out.println("------------------------");
+        System.out.println("By speciality and Fees");
+
+        try {
+            doctorList = doctorService.getBySpecialityAndLessFees("PEDIATRICIAN",2000);
+            for (Doctor doctor : doctorList){
+                System.out.println(doctor);
+            }
+        }catch (DoctorNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("--------------------");
+        System.out.println("By Speciality and ratings");
+
+        try {
+            doctorService.getBySpecialityAndRatings("NEUROLOGIST",8);
+            for (Doctor doctor : doctorList){
+                System.out.println(doctor);
+            }
+        }catch (DoctorNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
 
     }
 }

@@ -34,8 +34,14 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
     }
 
     @Override
-    public void updateDoctor(int doctorId, double fes) {
+    public void updateDoctor(int doctorId, double fees) {
+        try (Connection connection = DoctorDb.OpenConnection();
+             PreparedStatement statement = connection.prepareStatement(Queries.UPDATEQUERY);
+        ) {
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -146,5 +152,10 @@ public class DoctorRepositoryImpl implements IDoctorRepository {
         }
 
         return doctorList;
+    }
+
+    @Override
+    public Doctor findById(int doctorId) {
+        return null;
     }
 }

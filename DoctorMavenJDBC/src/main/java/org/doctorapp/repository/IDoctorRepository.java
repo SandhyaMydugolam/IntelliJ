@@ -18,6 +18,8 @@ public interface IDoctorRepository {
     List<Doctor> findSpecialityAndLessFees(String speciality,double fees)throws DoctorNotFoundException;
     List<Doctor> findSpecialityAndRatings(String speciality,int ratings)throws DoctorNotFoundException;
     List<Doctor> findSpecialityAndNameContains(String speciality,String doctorName)throws DoctorNotFoundException;
+
+                                                                                            Doctor findById(int doctorId);
 }
 
 

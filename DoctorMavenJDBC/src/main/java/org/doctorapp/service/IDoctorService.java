@@ -1,6 +1,7 @@
 package org.doctorapp.service;
 
 import org.doctorapp.exceptions.DoctorNotFoundException;
+import org.doctorapp.exceptions.IdNotFoundException;
 import org.doctorapp.model.Doctor;
 
 import java.util.List;
@@ -9,7 +10,7 @@ public interface IDoctorService {
     void addDoctor(Doctor doctor);
     void updateDoctor(int doctorId, double fes);
     void deleteDoctor(int doctorId);
-    void getById(int doctorId);
+    Doctor getById(int doctorId) throws IdNotFoundException;
     List<Doctor> getAll() ;
     List<Doctor> getBySpeciality(String speciality) throws DoctorNotFoundException;
     List<Doctor> getBySpecialityAndExp(String speciality,int experince)throws DoctorNotFoundException;
